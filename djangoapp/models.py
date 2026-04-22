@@ -6,6 +6,8 @@ class User(models.Model):
     ism=models.CharField(max_length=50,blank=False)
     familya=models.CharField(max_length=50,blank=False)
     yosh=models.PositiveIntegerField(default=15,blank=True)
+    phon=models.CharField(max_length=15, null=True, blank=True)
+    email=models.EmailField(max_length=100, null=True, blank=True)
     pitcture=models.ImageField(upload_to='images/',default='images/default.jpg',blank=True)
     
     def __str__(self):
