@@ -3,7 +3,7 @@ from . import models
 
 
 # Create your views here.
-def start(request):
+def mypro(request):
 
     users=models.User.objects.all()
     return render(request,'index.html',context={'users':users}) 

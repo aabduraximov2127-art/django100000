@@ -5,8 +5,8 @@ from django.db import models
 class User(models.Model):
     ism=models.CharField(max_length=50,blank=False)
     familya=models.CharField(max_length=50,blank=False)
-    yosh=models.PositiveIntegerField(default=16,blank=True)
-    
+    yosh=models.PositiveIntegerField(default=15,blank=True)
+    pitcture=models.ImageField(upload_to='images/',default='images/default.jpg',blank=True)
     
     def __str__(self):
         return f'{self.ism} {self.familya}' 
