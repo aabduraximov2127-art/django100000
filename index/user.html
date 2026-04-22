@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ user.ism }} {{ user.familya }} <br>Yosh: {{ user.yosh }}</h2>
+
+
+
+{% if user.pitcture %}
+    <img src="{{ user.pitcture.url }}" width="200">
+{% endif %}
+
+
+
+<a href="{% url 'user_list' %}"> <br>Orqaga qaytish</a>
+
+{% endblock %}
