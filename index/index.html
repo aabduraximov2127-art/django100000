@@ -7,10 +7,8 @@
 
 
 {% for user in users %}
-<a href="{% url 'user_view' user.id %}">
-<h1>{{ user.ism }} {{ user.familya }} — {{ user.yosh }} yosh</h1>
-    </a>
-    <hr>
+<a href="{% url 'user_view' user.id %}"> <h1><i>{{ user.ism }} {{ user.familya }} {{ user.yosh }}  yosh</i></h1></a>
+    
 {% endfor %}
 
 {% endblock %}
