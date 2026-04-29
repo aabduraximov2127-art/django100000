@@ -92,8 +92,7 @@ class UserDelete(DeleteView):
 #             user = form.save(commit=False)
 #             user.save()
 #             return redirect('user_list')
-#     else:
-#         form = UserForm()
+
 
 #     return render(request, "user_create.html", {"form": form})
 
@@ -106,7 +105,7 @@ class UserDelete(DeleteView):
 #         if form.is_valid():
 #             form.save()
 #         return redirect('user_list')
-
+   
 #     return render(request, "user_update.html", {"form": form})
     
     

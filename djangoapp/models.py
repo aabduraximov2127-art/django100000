@@ -14,8 +14,8 @@ class User(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            short_id = str(uuid.uuid4())[:5]
-            self.slug = slugify(f"{self.ism}-{self.familya}-{short_id}")
+            slug = str(uuid.uuid4())[:5]
+            self.slug = slugify(f"{self.ism}-{self.familya}-{slug}")
 
         super().save(*args, **kwargs)
 

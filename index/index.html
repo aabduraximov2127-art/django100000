@@ -3,7 +3,7 @@
 {% block content %}
 
 
-
+<div class="div1">
 {% for user in users %}
 
     <a href="{% url 'user_view' user.slug %}">
@@ -11,7 +11,7 @@
             <i>{{ user.ism }} {{ user.familya }}</i>
         </h1>
     </a>
-
+<div class="div3">
     <a href="{% url 'user_update' user.slug %}">
         Update
     </a>
@@ -19,11 +19,12 @@
     <a href="{% url 'user_delete' user.slug %}">
         Delete
     </a>
+    </div>
 
     <hr>
 
 {% endfor %}
-
+</div>
 
 <a href="{% url 'user_create' %}">User Create</a>
 

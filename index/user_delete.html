@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="div2">
 <h2>Rostdan ham ochirmoqchimisiz?</h2>
 
-<p><b>{{ user.ism }} {{ user.familya }}</b></p>
+<p><b>{{ user.ism }} {{ user.familya }}ni</b></p>
 
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Ha ochirish</button>
+    <div>
+    <button class="delete1" type="submit">Ha ochirish</button>
+    </div>
 </form>
 
 <br>
 
 <a href="{% url 'user_list' %}">Bekor qilish</a>
-
+</div>
 {% endblock %}
