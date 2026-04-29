@@ -2,13 +2,29 @@
 
 {% block content %}
 
-{% include "navbar.html" %}
-
 
 
 {% for user in users %}
-<a href="{% url 'user_view' user.slug %}"> <h1><i>{{ user.ism }} {{ user.familya }} {{ user.yosh }}  yosh</i></h1></a>
-    
+
+    <a href="{% url 'user_view' user.slug %}">
+        <h1>
+            <i>{{ user.ism }} {{ user.familya }}</i>
+        </h1>
+    </a>
+
+    <a href="{% url 'user_update' user.slug %}">
+        Update
+    </a>
+
+    <a href="{% url 'user_delete' user.slug %}">
+        Delete
+    </a>
+
+    <hr>
+
 {% endfor %}
+
+
+<a href="{% url 'user_create' %}">User Create</a>
 
 {% endblock %}

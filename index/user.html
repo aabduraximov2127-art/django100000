@@ -2,13 +2,20 @@
 
 {% block content %}
 
-<h2>{{ user.ism }} {{ user.familya }} <br>Yosh: {{ user.yosh }} <br><br> <a href="user.email">{{user.email}}</a></h2>
+<h2>{{ user.ism }} {{ user.familya }} <br>Yosh: {{ user.yosh }} <br><br></h2>
 
 
 
-{% if user.pitcture %}
-    <img src="{{ user.pitcture.url }}" width="200">
+{% if user.picture %}
+    <img src="{{ user.picture.url }}" width="200">
 {% endif %}
+<br><br>
+    <a href="{% url 'user_update' user.slug %}">
+        Update
+    </a><br>
+        <a href="{% url 'user_delete' user.slug %}">
+        Delete
+    </a>
 
 
 
