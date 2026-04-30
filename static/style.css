@@ -1,38 +1,347 @@
-body{
-    background-color:white;
-    color: black;
+body {
+    background-color: #f4f6f9;
+}
+
+.container {
+    width: 700px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
     text-align: center;
+    color: #2c3e50;
 }
 
-.delete1{
-    width: 100px;
-    height: 50px;
-    background-color: white;
-    color: black;
-    border-radius: 30px;
-    border-color: gold ;
-}
-    
-.div2{
-    background-color: black;
-    left: 1600px;
-    height: 700px;
-    color:aqua;
-    border-radius: 40px;
+.user-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    transition: 0.2s;
 }
 
-.div1{
-    border-radius: 50px;
-    background-color: black;
-    left: 40px ;
-    right: 40px;
-
+.user-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.div3{
-   background-color: red  ;
-    color: black; 
-   width: auto;
-   height: auto;
-   border-radius: 30px;
+.user-name a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.user-name a:hover {
+    color: #3498db;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions a {
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+}
+
+.actions a:first-child {
+    background-color: #3498db;
+    /* Update */
+}
+
+.actions a:last-child {
+    background-color: #e74c3c;
+    /* Delete */
+}
+
+.actions a:hover {
+    opacity: 0.85;
+}
+
+.create {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.create:hover {
+    background-color: #27ae60;
+}
+
+/* Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Center container */
+.form-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #4facfe;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #007bff;
+    transform: scale(1.05);
+}
+
+/* Error */
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-img img {
+    width: 90px;
+    /* oldin 120px edi */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4facfe;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+/* hover effect */
+.profile-img img:hover {
+    transform: scale(1.1);
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* umumiy button */
+.btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* update button (gradient) */
+.btn.edit {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+/* delete button (gradient) */
+.btn.delete {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* hover animatsiya */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* click effect */
+.btn:active {
+    transform: scale(0.95);
+}
+
+.back {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: #4facfe;
+    color: white;
+}
+
+
+/* Center container */
+.delete-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+/* Card */
+.delete-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Warning icon */
+.warning-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Username */
+.user-name {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Text */
+.text {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 8px 0;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+/* Danger button */
+.btn.danger {
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+.btn.danger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+/* Cancel button */
+.btn.cancel {
+    background: #f1f1f1;
+    color: #333;
+}
+
+.btn.cancel:hover {
+    background: #ddd;
+}
+
+
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: yellow !important;
+    transform: scale(1.05);
 }

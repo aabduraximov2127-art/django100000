@@ -1,31 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% include "navbar.html" %}
+<div class="container">
 
+    <h1>Foydalanuvchilar ro'yxati</h1>
 
-<div class="div1">
-{% for user in users %}
+    {% for user in users %}
 
-    <a href="{% url 'user_view' user.slug %}">
-        <h1>
-            <i>{{ user.ism }} {{ user.familya }}</i>
-        </h1>
-    </a>
-<div class="div3">
-    <a href="{% url 'user_update' user.slug %}">
-        Update
-    </a>
+    <div class="user-card">
 
-    <a href="{% url 'user_delete' user.slug %}">
-        Delete
-    </a>
+        <div class="user-name">
+            <a href="{% url 'user_view' user.slug %}">
+                {{ user.ism }} {{ user.familya }}
+            </a>
+        </div>
+
+        <div class="actions">
+            <a href="{% url 'user_update' user.slug %}">Update</a>
+            <a href="{% url 'user_delete' user.slug %}">Delete</a>
+        </div>
+
     </div>
 
-    <hr>
+    {% empty %}
 
-{% endfor %}
+    <p>Hozircha foydalanuvchi yo'q</p>
+
+    {% endfor %}
+
+    <a class="create" href="{% url 'user_create' %}">
+        + Yangi user qo'shish
+    </a>
+
 </div>
-
-<a href="{% url 'user_create' %}">User Create</a>
 
 {% endblock %}

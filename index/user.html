@@ -1,24 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="profile-container">
+    <div class="profile-card">
 
-<h2>{{ user.ism }} {{ user.familya }} <br>Yosh: {{ user.yosh }} <br><br></h2>
+        {% load static %}
+        
+        <div class="profile-img">
+            {% if user.picture %}
+            <img src="{{ user.picture.url }}">
+            {% else %}
+            <img src="{% static 'images/default-user.png' %}">
+            {% endif %}
+        </div>
 
+        <!-- Info -->
+        <h2>{{ user.ism }} {{ user.familya }}</h2>
+        <p class="age">Yosh: {{ user.yosh }}</p>
 
+        <!-- Buttons -->
+        <div class="btn-group">
+            <a href="{% url 'user_update' user.slug %}" class="btn edit">✏️ Update</a>
+            <a href="{% url 'user_delete' user.slug %}" class="btn delete">🗑 Delete</a>
+        </div>
 
-{% if user.picture %}
-    <img src="{{ user.picture.url }}" width="200">
-{% endif %}
-<br><br>
-    <a href="{% url 'user_update' user.slug %}">
-        Update
-    </a><br>
-        <a href="{% url 'user_delete' user.slug %}">
-        Delete
-    </a>
-
-
-
-<a href="{% url 'user_list' %}"> <br>Orqaga qaytish</a>
-
+        <a href="{% url 'user_list' %}" class="back">⬅ Orqaga qaytish</a>
+    </div>
+</div>
 {% endblock %}
