@@ -111,3 +111,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+
+    let pass1 = document.getElementById("id_password1").value;
+    let pass2 = document.getElementById("id_password2").value;
+    let error = document.getElementById("errorMsg");
+
+    error.innerText = "";
+
+    if(pass1.length < 6){
+        e.preventDefault();
+        error.innerText = "Password kamida 6 ta bo‘lishi kerak!";
+        return;
+    }
+
+    if(pass1 !== pass2){
+        e.preventDefault();
+        error.innerText = "Password mos emas!";
+        return;
+    }
+
+});
