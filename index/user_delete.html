@@ -1,34 +1,109 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="delete-container">
+
+<div class="delete-wrapper">
 
     <div class="delete-card">
 
-        <div class="warning-icon">⚠️</div>
+        <div class="icon">⚠️</div>
 
         <h2>Rostdan ham o‘chirmoqchimisiz?</h2>
 
-        <p class="user-name">
-            <b>{{ user.ism }} {{ user.familya }}</b>
+        <p class="name">
+            {{ user.ism }} {{ user.familya }}
         </p>
 
-        <p class="text">
+        <p class="warning-text">
             Bu amal qaytarilmaydi!
         </p>
 
-        <form method="post" class="delete-form">
+        <form method="post">
             {% csrf_token %}
-            <button class="btn danger" type="submit">
+
+            <button type="submit" class="btn delete-btn">
                 Ha, o‘chirish
             </button>
         </form>
 
-        <a href="{% url 'user_list' %}" class="btn cancel">
+        <a href="{% url 'user_list' %}" class="btn cancel-btn">
             Bekor qilish
         </a>
 
     </div>
 
 </div>
+
+<style>
+.delete-wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4e50,#f9d423);
+    padding:20px;
+}
+
+.delete-card{
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.icon{
+    font-size:40px;
+}
+
+h2{
+    margin:15px 0;
+    color:#333;
+}
+
+.name{
+    font-size:20px;
+    font-weight:bold;
+    color:#222;
+}
+
+.warning-text{
+    color:#e74c3c;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:16px;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+.delete-btn{
+    background:#e74c3c;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+    transform:scale(1.03);
+}
+
+.cancel-btn{
+    background:#ecf0f1;
+    color:#333;
+}
+
+.cancel-btn:hover{
+    background:#dfe6e9;
+}
+</style>
+
 {% endblock %}

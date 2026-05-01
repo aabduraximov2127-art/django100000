@@ -2,66 +2,44 @@
 
 {% block content %}
 
-<div style="
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    padding:20px;
-">
+<div class="wrapper">
 
-    <div style="
-        width:460px;
-        background:white;
-        padding:30px;
-        border-radius:18px;
-        box-shadow:0 20px 40px rgba(0,0,0,0.2);
-    ">
+    <div class="card">
 
-        <h2 style="text-align:center; margin-bottom:20px; color:#333;">
-            ✏️ Update User
-        </h2>
+        <h2>✏️ Update User</h2>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <!-- Ism -->
             <label>👤 Ism</label>
-            <input type="text" name="name" value="{{ user.ism }}">
+            <input type="text" name="ism" value="{{ user.ism }}" required>
 
             <!-- Familiya -->
             <label>👤 Familiya</label>
-            <input type="text" name="surename" value="{{ user.familiya }}">
+            <input type="text" name="familiya" value="{{ user.familiya }}" required>
 
             <!-- Yosh -->
             <label>🎂 Yosh</label>
-            <input type="number" name="age" value="{{ user.yosh }}">
-
-
+            <input type="number" name="yosh" value="{{ user.yosh }}" required>
+            
+            <label>📞 phon</label>
+            <input type="text" name="phon" value="{{user.phon}} ">
+            
+            <label>📧 Email</label>
+            <input type="text" name="email" value="{{user.email}} ">
+            
             <!-- Rasm -->
             <label>🖼 Yangi rasm</label>
             <input type="file" name="picture">
 
-            <!-- Old image -->
             {% if user.picture %}
-                <div style="text-align:center; margin-top:15px;">
-                    <img src="{{ user.picture.url }}"
-                         style="
-                            width:120px;
-                            height:120px;
-                            object-fit:cover;
-                            border-radius:50%;
-                            border:3px solid #764ba2;
-                            box-shadow:0 8px 20px rgba(0,0,0,0.2);
-                         ">
+                <div class="img-box">
+                    <img src="{{ user.picture.url }}" alt="user image">
                 </div>
             {% endif %}
 
-            <!-- Button -->
-            <button type="submit">
-                Update
-            </button>
+            <button type="submit">Update</button>
 
         </form>
 
@@ -69,44 +47,70 @@
 
 </div>
 
-<!-- STYLE -->
 <style>
-input {
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
+
+.card{
+    width:460px;
+    background:gold;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
     width:100%;
     padding:11px;
     margin:6px 0 15px;
     border:1px solid #ddd;
     border-radius:10px;
     outline:none;
-    transition:0.3s;
 }
 
-input:focus {
+input:focus{
     border-color:#764ba2;
     box-shadow:0 0 10px rgba(118,75,162,0.3);
 }
 
-button {
+button{
     width:100%;
     padding:13px;
     border:none;
     border-radius:10px;
     background:linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
+    color:black;
     font-size:16px;
     cursor:pointer;
     transition:0.3s;
 }
 
-button:hover {
+button:hover{
     transform:scale(1.03);
-    opacity:0.95;
 }
 
-label {
-    font-weight:bold;
-    font-size:14px;
-    color:#444;
+.img-box{
+    text-align:center;
+    margin-top:15px;
+}
+
+.img-box img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #764ba2;
 }
 </style>
 

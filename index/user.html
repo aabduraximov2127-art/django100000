@@ -1,28 +1,97 @@
-{% extends "base.html" %}
-{% load static %}
+<div class="profile-wrapper">
 
-{% block content %}
-<div class="profile-container">
     <div class="profile-card">
 
-        <div class="profile-img">
-            {% if user.picture %}
-                <img src="{{ user.picture.url }}" alt="profile">
-            {% else %}
-                <img src="{% static 'images/default-user.png' %}" alt="default">
-            {% endif %}
+        <!-- Avatar -->
+        <div class="avatar">
+            <img src="{{ user.picture.url }}" alt="profile">
         </div>
 
+        <!-- Info -->
         <h2>{{ user.ism }} {{ user.familya }}</h2>
-        <p class="age">Yosh: {{ user.yosh }}</p>
 
-        <div class="btn-group">
-            <a href="{% url 'user_update' user.slug %}" class="btn edit">Update</a>
-            <a href="{% url 'user_delete' user.id %}" class="btn delete">🗑 Delete</a>
+        <p>🎂 Yosh: <b>{{ user.yosh }}</b></p>
+        <p>📧 Email: <b>{{ user.email }}</b></p>
+        <p>📞 Phon: <b>{{user.phon}}</b></p>
+
+        <!-- Buttons -->
+        <div class="actions">
+            <a href="{% url 'user_update' user.slug %}" class="btn update">Update</a>
+            <a href="{% url 'user_delete' user.slug %}" class="btn delete">Delete</a>
         </div>
 
-        <a href="{% url 'user_list' %}" class="back">⬅ Orqaga qaytish</a>
+        <a href="{% url 'user_list' %}" class="back">
+            ← Orqaga qaytish
+        </a>
 
     </div>
+
 </div>
-{% endblock %}
+
+<style>
+.profile-wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1f4037,#99f2c8);
+    padding:20px;
+}
+
+.profile-card{
+    width:380px;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.avatar img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #4facfe;
+    margin-bottom:15px;
+}
+
+h2{
+    margin:10px 0;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn{
+    flex:1;
+    padding:10px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.update{
+    background:#2ecc71;
+}
+
+.delete{
+    background:#e74c3c;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.back{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    color:#333;
+}
+</style>

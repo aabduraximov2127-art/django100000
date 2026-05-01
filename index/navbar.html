@@ -9,14 +9,16 @@
         </a>
 
         <!-- Mobile button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Menu -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <!-- Left -->
+            <!-- Left menu -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
@@ -30,16 +32,18 @@
             </ul>
 
             <!-- Search -->
-            <form class="d-flex me-3 search-box">
-                <input class="form-control search-input" type="search" placeholder="Search...">
-                <button class="btn search-btn">Search</button>
+            <form class="d-flex me-3 search-box" method="get" action="">
+                <input class="form-control search-input"
+                       type="search"
+                       name="q"
+                       placeholder="Search...">
+
+                <button class="btn search-btn" type="submit">
+                    Search
+                </button>
             </form>
 
-        
-
-
-
-
         </div>
+
     </div>
 </nav>
