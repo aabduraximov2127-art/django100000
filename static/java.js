@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const toast = document.createElement("div");
         toast.innerText = message;
         toast.className = "toast";
-
+        
         document.body.appendChild(toast);
 
         setTimeout(() => {
