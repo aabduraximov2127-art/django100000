@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'mypro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'users',
+        'NAME': 'students',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
